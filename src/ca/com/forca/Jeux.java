@@ -5,14 +5,19 @@
  */
 package ca.com.forca;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author felipeoliveira
  */
 public class Jeux {
     public static void main(String args[]){
-        //On declare et montre la fenetre du jeux
-        //Tabuleiro tabuleiro = new Tabuleiro();
-        //tabuleiro.setVisible(true);
+        
+        JouersListeReader jouerReader = new JouersListeReader();
+        ArrayList<String> listeJouer = jouerReader.getListePrenom();
+        
+        System.out.println(listeJouer.get(0));
+        
     }
 }
