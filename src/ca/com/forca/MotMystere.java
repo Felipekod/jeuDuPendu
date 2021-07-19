@@ -47,7 +47,15 @@ public class MotMystere {
     //On ajoute la valeur false pour chaque char dans la liste charTrouve
             for(int i = 0; i < longuerMot ; i++)
             {
-                charTrouve[i] = false;
+                if(charMotMystere[i] == '-')
+                {
+                    charTrouve[i] = true;
+                }
+                else
+                {
+                   charTrouve[i] = false;
+                }
+                
             }
             this.charTrouve = charTrouve;
             

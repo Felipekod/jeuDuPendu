@@ -5,19 +5,31 @@
  */
 package ca.com.forca;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author felipeoliveira
  */
-public class Jouer {
+public class Partie {
     
     private String prenom;
     private int score;
+    private LocalDateTime quand;
+    private int difficulte;
     
     /**
      * Getters and setters
      * 
      */
+    public void setDifficuklte(int difficulte){
+        this.difficulte = difficulte;
+    }
+    
+    public int getDifficulte(){
+        return this.difficulte;
+    }
+    
     public String getPrenom(){
         return this.prenom;
     }
@@ -33,4 +45,13 @@ public class Jouer {
     public void setScore(int score){
         this.score = score;
     }
+    
+    public void setPartie(LocalDateTime quand){
+        this.quand = quand;
+    }
+    
+    public LocalDateTime getQuand(){
+        return this.quand;
+    }
+   
 }

@@ -5,6 +5,10 @@
  */
 package ca.com.forca;
 
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import javax.swing.Timer;
+
 /**
  * La classe represent le mecanisme du jeu
  * 
@@ -19,26 +23,16 @@ public class Mecanisme {
        
        
     //Variables de niveau de difficulté
-       private int maxErreursFacile = 6;
-       private int maxErreursMedium = 5;
-       private int maxErreursDifficile = 4;
-       
+       private int maxErreurs = 6;
        private int difficulte;
        
     //Numero de la photo courante
-       private int image;
+       private int image = 4;
        
     //Contructeur
-       public Mecanisme(int difficulte)
+       public Mecanisme()
        {
-           this.difficulte = difficulte;
-           
-           if(difficulte == 1)
-               this.image = 4;
-           else if(difficulte == 2)
-               this.image = 5;
-           else
-               this.image = 6;
+       
        }
        
        //Getters $ setters
@@ -59,6 +53,9 @@ public class Mecanisme {
            char[] listeChar = motMystere.getCharMotMystere();
            //variable de controle
            boolean charTrouve = false;
+          
+        
+           
            
            //On recherche le char dans charMotMystere
            for(int i = 0; i < longuer; i++)
@@ -70,6 +67,50 @@ public class Mecanisme {
                    
                    charTrouve = true;
                }
+                //Si le char est une variation de 'e'.
+//               char e1 = 'é';
+//               char e2 = 'è';
+//               char e3 = 'ê';
+//               char e4 = 'ë';
+               if(listeChar[i] == 'é' || listeChar[i] == 'è' || listeChar[i] == 'ê' || listeChar[i] == 'ë'){
+                   if(charRecherche == 'e' || charRecherche == 'E'){
+                        //On assigne true au index du char trouvé
+                        motMystere.setCharTrouve(i);
+                       charTrouve = true;
+                   }
+                }
+               //Si le char est une variation de 'a'.
+               else if(listeChar[i] == 'á' || listeChar[i] == 'à' || listeChar[i] == 'â' || listeChar[i] == 'ä' || listeChar[i] == 'ã'){
+                   if(charRecherche == 'a'){
+                        //On assigne true au index du char trouvé
+                        motMystere.setCharTrouve(i);
+                       charTrouve = true;
+                   }
+                }
+               //Si le char est une variation de 'u'.
+               else if(listeChar[i] == 'ú' || listeChar[i] == 'ù' || listeChar[i] == 'ü'){
+                   if(charRecherche == 'u'){
+                        //On assigne true au index du char trouvé
+                        motMystere.setCharTrouve(i);
+                       charTrouve = true;
+                   }
+                }
+                //Si le char est une variation de 'c'.
+               else if(listeChar[i] == 'ç'){
+                   if(charRecherche == 'c'){
+                        //On assigne true au index du char trouvé
+                        motMystere.setCharTrouve(i);
+                       charTrouve = true;
+                   }
+                }
+               //Si le char est une variation de 'i'.
+               else if(listeChar[i] == 'í' || listeChar[i] == 'ì' || listeChar[i] == 'î' || listeChar[i] == 'ï'){
+                   if(charRecherche == 'i'){
+                        //On assigne true au index du char trouvé
+                         motMystere.setCharTrouve(i);
+                        charTrouve = true;
+                   }
+                }
            }
            
            //On ajoute 1 au numero de l'image et 1 au compteur if le char n'a pas été trouvé
@@ -86,16 +127,8 @@ public class Mecanisme {
        
        public boolean verifierDefaite(){
            //si Difficulte FACILE
-           if(difficulte == 1 && compteurErreurs == maxErreursFacile)
+           if(compteurErreurs == maxErreurs)
            {
-               return true;
-           }
-           //Si difficulte MEDIUM
-           else if(difficulte == 2 && compteurErreurs == maxErreursMedium){
-               return true;
-            }
-           //si difficulte DIFFICILE
-           else if(difficulte == 3 && compteurErreurs == maxErreursDifficile){
                return true;
            }
            else{
@@ -138,10 +171,11 @@ public class Mecanisme {
                
                //Si le char a été deja trouvé
                if(charTrouve[i]){
-                   motCache += charMotMystere[i];
+                   char charToUpper = charMotMystere[i];
+                   motCache += charToUpper;
                }
                else{
-                   motCache += "_";
+                   motCache += "*";
                }
            }
            
@@ -149,7 +183,9 @@ public class Mecanisme {
            
        }
        
+       //On cree le countDown
        
+      
        
        
 }

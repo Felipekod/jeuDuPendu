@@ -11,13 +11,11 @@ import java.util.ArrayList;
  *
  * @author felipeoliveira
  */
-public class Jeux {
+public class Jeu {
     public static void main(String args[]){
         
-        JouersListeReader jouerReader = new JouersListeReader();
-        ArrayList<String> listeJouer = jouerReader.getListePrenom();
-        
-        System.out.println(listeJouer.get(0));
+        ConfigurationInitiale ci = new ConfigurationInitiale();
+        ci.setVisible(true);
         
     }
 }
