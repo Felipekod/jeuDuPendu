@@ -44,9 +44,6 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
         textMotChoisi = new javax.swing.JTextField();
         btnOk = new javax.swing.JButton();
         btnAnnuler = new javax.swing.JButton();
-        btnDifficile = new javax.swing.JRadioButton();
-        btnMedium = new javax.swing.JRadioButton();
-        btnFacille = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,21 +71,6 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
             }
         });
 
-        difficulte.add(btnDifficile);
-        btnDifficile.setText("Difficile");
-        btnDifficile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDifficileActionPerformed(evt);
-            }
-        });
-
-        difficulte.add(btnMedium);
-        btnMedium.setText("Medium");
-
-        difficulte.add(btnFacille);
-        btnFacille.setSelected(true);
-        btnFacille.setText("Facille");
-
         jButton1.setText(" -- RANKING -- ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,56 +82,36 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(btnAnnuler)
-                        .addGap(107, 107, 107)
-                        .addComponent(btnOk)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(labelinstruction)
-                                .addGap(18, 18, 18)
-                                .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(82, 82, 82))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(150, 150, 150)))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMedium)
-                    .addComponent(btnFacille)
-                    .addComponent(btnDifficile))
-                .addGap(0, 57, Short.MAX_VALUE))
+                        .addComponent(jButton1)
+                        .addGap(245, 245, 245))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelinstruction)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnAnnuler)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnOk))
+                            .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(131, 131, 131))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(btnFacille)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnMedium))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelinstruction))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnOk)
-                            .addComponent(btnAnnuler)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(btnDifficile)))
+                .addGap(23, 23, 23)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelinstruction))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAnnuler)
+                    .addComponent(btnOk))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -158,7 +120,7 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 60, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -189,14 +151,14 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
                 this.setVisible(false);
             
             //on verifie la difficulté
-            if(btnDifficile.isSelected())
-            {
-                difficulteSelectionne = 3;
-            }
-            else if(btnMedium.isSelected())
-            {
-                difficulteSelectionne = 2;
-            }
+//            if(btnDifficile.isSelected())
+//            {
+//                difficulteSelectionne = 3;
+//            }
+//            else if(btnMedium.isSelected())
+//            {
+//                difficulteSelectionne = 2;
+//            }
             
             PlateauDeJeu tabuleiro = new PlateauDeJeu(prenom, difficulteSelectionne, 6);
             tabuleiro.setVisible(true);
@@ -213,10 +175,6 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btnOkActionPerformed
-
-    private void btnDifficileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDifficileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDifficileActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Ranking ranking = new Ranking();
@@ -264,9 +222,6 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnnuler;
-    private javax.swing.JRadioButton btnDifficile;
-    private javax.swing.JRadioButton btnFacille;
-    private javax.swing.JRadioButton btnMedium;
     private javax.swing.JButton btnOk;
     private javax.swing.ButtonGroup difficulte;
     private javax.swing.JButton jButton1;

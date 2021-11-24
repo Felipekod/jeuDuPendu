@@ -5,7 +5,9 @@
  */
 package ca.com.forca;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
+import java.math.*;
 
 /**
  *
@@ -16,6 +18,8 @@ public class Jeu {
         
         ConfigurationInitiale ci = new ConfigurationInitiale();
         ci.setVisible(true);
+        
+        
         
     }
 }
