@@ -5,6 +5,7 @@
  */
 package ca.com.forca;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -27,6 +28,9 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         this.setResizable(false);
+        
+        //On change la colour du buttton Ok
+        
     }
 
     /**
@@ -39,80 +43,113 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
     private void initComponents() {
 
         difficulte = new javax.swing.ButtonGroup();
+        lblPhoto = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        labelinstruction = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lblName = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         textMotChoisi = new javax.swing.JTextField();
         btnOk = new javax.swing.JButton();
-        btnAnnuler = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        lblPhoto.setText("jLabel1");
+        lblPhoto.setMaximumSize(new java.awt.Dimension(500, 500));
+        lblPhoto.setMinimumSize(new java.awt.Dimension(400, 400));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 548));
 
-        labelinstruction.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        labelinstruction.setText("Voulez saisir votre nom");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/NotreDame400x557.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(3315, 4898));
+        jLabel1.setMinimumSize(new java.awt.Dimension(3315, 4898));
+
+        jPanel3.setBackground(new java.awt.Color(16, 16, 16));
+
+        lblName.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(249, 249, 249));
+        lblName.setText("Name");
+        lblName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lblNameFocusGained(evt);
+            }
+        });
+
+        textMotChoisi.setBackground(new java.awt.Color(8, 8, 8));
+        textMotChoisi.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        textMotChoisi.setForeground(new java.awt.Color(248, 246, 246));
+        textMotChoisi.setBorder(null);
         textMotChoisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textMotChoisiActionPerformed(evt);
             }
         });
 
-        btnOk.setText("OK");
+        btnOk.setBackground(new java.awt.Color(0, 0, 0));
+        btnOk.setFont(new java.awt.Font("Malayalam MN", 1, 36)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(255, 211, 92));
+        btnOk.setText("START");
+        btnOk.setBorder(null);
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOkActionPerformed(evt);
             }
         });
 
-        btnAnnuler.setText("Annuler");
-        btnAnnuler.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAnnulerActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText(" -- RANKING -- ");
+        jButton1.setBackground(new java.awt.Color(23, 23, 23));
+        jButton1.setForeground(new java.awt.Color(2, 181, 138));
+        jButton1.setText("Ranking");
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(245, 245, 245))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelinstruction)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnAnnuler)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnOk))
-                            .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(131, 131, 131))))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblName))))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelinstruction))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAnnuler)
-                    .addComponent(btnOk))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textMotChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
+                .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(jButton1)
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,69 +158,63 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void textMotChoisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMotChoisiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textMotChoisiActionPerformed
-
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        String prenom = textMotChoisi.getText();
-        if(prenom.isBlank())
-        {
-            JFrame frame = new JFrame();
-           JOptionPane.showMessageDialog(frame, "Voulez saisir votre prenom.");
-        }
-        else{
-            
-            if(prenom.length() <= 10 && prenom.matches("^[-a-zA-Z]+"))
-            {
-                this.setVisible(false);
-            
-            //on verifie la difficulté
-//            if(btnDifficile.isSelected())
-//            {
-//                difficulteSelectionne = 3;
-//            }
-//            else if(btnMedium.isSelected())
-//            {
-//                difficulteSelectionne = 2;
-//            }
-            
-            PlateauDeJeu tabuleiro = new PlateauDeJeu(prenom, difficulteSelectionne, 6);
-            tabuleiro.setVisible(true);
-            
-            //On ferme le Jframe
-            this.dispose();
-                
-            }
-            else{
-                JFrame frame = new JFrame();
-                JOptionPane.showMessageDialog(frame, "Votre prenom doit contenir un maximun de 10 caractères de A à Z.");
-            }
-            
-            
-        }
-    }//GEN-LAST:event_btnOkActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Ranking ranking = new Ranking();
         ranking.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnulerActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnAnnulerActionPerformed
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        String prenom = textMotChoisi.getText();
+        if(prenom.isBlank())
+        {
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame, "Voulez saisir votre prenom.");
+        }
+        else{
+
+            if(prenom.length() <= 10 && prenom.matches("^[-a-zA-Z]+"))
+            {
+                this.setVisible(false);
+                PlateauDeJeu tabuleiro = new PlateauDeJeu(prenom, difficulteSelectionne, 6);
+                tabuleiro.setVisible(true);
+
+                //On ferme le Jframe
+                this.dispose();
+
+            }
+            else{
+                JFrame frame = new JFrame();
+                JOptionPane.showMessageDialog(frame, "Votre prenom doit contenir un maximun de 10 caractères de A à Z.");
+            }
+
+        }
+    }//GEN-LAST:event_btnOkActionPerformed
+
+    private void textMotChoisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMotChoisiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textMotChoisiActionPerformed
+
+    private void lblNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lblNameFocusGained
+        //Label "Name"
+        //TO DO Renommer
+        textMotChoisi.requestFocus();
+    }//GEN-LAST:event_lblNameFocusGained
 
     /**
      * @param args the command line arguments
@@ -221,12 +252,15 @@ public class ConfigurationInitiale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAnnuler;
     private javax.swing.JButton btnOk;
     private javax.swing.ButtonGroup difficulte;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelinstruction;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPhoto;
     private javax.swing.JTextField textMotChoisi;
     // End of variables declaration//GEN-END:variables
 }

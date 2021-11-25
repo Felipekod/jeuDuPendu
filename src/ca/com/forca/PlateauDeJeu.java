@@ -69,7 +69,8 @@ public class PlateauDeJeu extends javax.swing.JFrame {
             if(secTimer > 30)
                 {
                     labelSec.setText(""+secTimer);
-                    labelSec.setForeground(Color.green);
+                    Color green = new Color(60, 166, 96);
+                    labelSec.setForeground(green);
                 }
             else if(secTimer >= 10 && secTimer <= 30){
                 labelSec.setText(""+secTimer);
@@ -203,6 +204,7 @@ public class PlateauDeJeu extends javax.swing.JFrame {
         btnY = new javax.swing.JButton();
         btnZ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuJeu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -550,17 +552,15 @@ public class PlateauDeJeu extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelScore)
-                            .addComponent(labelPrenom))
+                            .addComponent(labelPrenom)
+                            .addComponent(jLabel1))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(labelMotMystere))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
-                                .addComponent(labelSec))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel1)))
+                                .addComponent(labelSec)))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -570,19 +570,30 @@ public class PlateauDeJeu extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(labelPrenom)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap(22, Short.MAX_VALUE)
                         .addComponent(labelSec)
-                        .addGap(18, 18, 18)))
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(46, 46, 46)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelMotMystere)
                     .addComponent(labelScore))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jMenuJeu.setText("Jeu");
@@ -830,6 +841,7 @@ public class PlateauDeJeu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuJeu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelImage;
     private javax.swing.JLabel labelMotMystere;
     private javax.swing.JLabel labelPrenom;
